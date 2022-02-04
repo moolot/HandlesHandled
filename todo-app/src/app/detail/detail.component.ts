@@ -9,11 +9,11 @@ export class DetailComponent implements OnInit {
 
   constructor() { }
 
-  task: any;
+  handle: any;
 
   ngOnInit(): void {
 
-    this.task = JSON.parse(localStorage.getItem('task'));
+    this.handle = JSON.parse(localStorage.getItem('handle'));
   }
 
 }
