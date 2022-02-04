@@ -9,31 +9,31 @@ export class AppService {
   constructor(private http: HttpClient) { }
 
   rootURL = '/api';
-  task: any;
+  handle: any;
 
-  setTask(task) {
-    this.task = task;
+  setHandle(handle) {
+    this.handle = handle;
   }
 
-  getTask() {
-    return this.task;
+  getHandle() {
+    return this.handle;
   }
 
-  getTasks() {
+  getHandles() {
     return this.http.get(this.rootURL + '/todos');
   }
 
-  addTask(task: any) {
-    return this.http.post(this.rootURL + '/todos', {task});
+  addHandle(handle: any) {
+    return this.http.post(this.rootURL + '/todos', {handle});
   }
 
-  editTask(task: any) {
-    return this.http.put(this.rootURL + '/todo', {task});
+  editHandle(handle: any) {
+    return this.http.put(this.rootURL + '/todo', {handle});
   }
 
-  deleteTask(taskId: any) {
-    console.log('deleting task:::', taskId);
-    return this.http.delete(`${this.rootURL}/todo/${taskId}`);
+  deleteHandle(handleId: any) {
+    console.log('deleting handle:::', handleId);
+    return this.http.delete(`${this.rootURL}/todo/${handleId}`);
   }
 
   getSettings(url: string) {
