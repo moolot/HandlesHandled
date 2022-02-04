@@ -5,9 +5,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from './app.service';
 
 @Component({
-  selector: 'app-handles',
-  templateUrl: './handles.component.html',
-  styleUrls: ['./handles.component.css']
+  selector: 'app-tasks',
+  templateUrl: './tasks.component.html',
+  styleUrls: ['./tasks.component.css']
 })
 export class HandlesComponent implements OnInit {
 
