@@ -33,31 +33,31 @@ const data = {
 
   module.exports = {
     getToDos: function() {
-        return data.todos;
+        return data.handles;
     },
     addToDo: function(handle) {
-        handle.id = data.todos.length + 1;
-        data.todos.push(handle);
+        handle.id = data.handles.length + 1;
+        data.handles.push(handle);
         return {
             message: "handle posting added",
-            handles: data.todos.length
+            handles: data.handles.length
         }
     },
     deleteToDos: function(id) {
-        data.todos = data.todos.filter(todo => todo.id != id)
+        data.handles = data.handles.filter(handle => handle.id != id)
         return {
             message: "handle posting deleted",
-            handles: data.todos.length
+            handles: data.handles.length
         }
     },
     editTodos: function(task) {
-        data.todos = data.todos.map(todo => {
-            if (todo.id === task.id) todo = handle;
-            return todo;
+        data.handles = data.handles.map(handle => {
+            if (handle.id === task.id) handle = handle;
+            return handle;
         });
         return {
             message: "handle posting edited",
-            handles: data.todos.length
+            handles: data.handles.length
         }
     }
   }
