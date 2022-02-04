@@ -1,35 +1,35 @@
 <div class="container">
-  <h2>Tasks</h2>
+  <h2>Handle Marketplace</h2>
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
-        <th>Task Id</th>
-        <th>Task Name</th>
-        <th>Assignee</th>
-        <th>Status</th>
+        <th>Handle</th>
+        <th>Seller</th>
+        <th>Price</th>
+        <th>Availability</th>
       </tr>
     </thead>
     <tbody>
       <tr (click)="gotoDetail(task)" *ngFor="let task of tasks; let i = index">
         <td>
-          {{task.id}}
+          {{task.handle}}
         </td>
         <td>
-          {{task.task}}
+          {{task.seller}}
         </td>
         <td>
-          {{task.assignee}}
+          {{task.price}}
         </td>
         <td>
           <div class="row">
             <div class="col-md-6">
-              {{task.status}}
+              {{task.availability}}
             </div>
             <div class="col-md-3">
-              <button type="button" (click)="openModal(template, task)" class="btn btn-warning right">Edit</button>
+              <button type="button" (click)="openModal(template, task)" class="btn btn-primary right">Buy</button>
             </div>
             <div class="col-md-3">
-              <button type="button" (click)="delTask(task.id)" class="btn btn-danger right">Delete</button>
+              <button type="button" (click)="delTask(task.id)" class="btn btn-danger right">Report</button>
             </div>
           </div>
         </td>
@@ -40,7 +40,7 @@
 
 <ng-template #template>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Task Edit</h4>
+    <h4 class="modal-title pull-left">Posting Edit</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -49,34 +49,34 @@
     <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="form-group col-md-6">
-          <label for="exampleInputEmail1">Id</label>
+          <label for="exampleInputEmail1">HandleID</label>
           {{editingId}}
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-6">
-          <label for="exampleInputEmail1">Task</label>
-          <input type="text" class="form-control" formControlName="task" id="exampleInputEmail1" placeholder="Create a Task">
+          <label for="exampleInputEmail1">Handle</label>
+          <input type="text" class="form-control" formControlName="handle" id="exampleInputEmail1" placeholder="@">
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-6">
-          <label for="exampleInputPassword1">Assignee</label>
-          <input type="text" class="form-control" formControlName="assignee" id="exampleInputPassword1" placeholder="Assignee">
+          <label for="exampleInputPassword1">Seller</label>
+          <input type="text" class="form-control" formControlName="seller" id="exampleInputPassword1" placeholder="Jake">
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-6">
-          <label for="sel1">Status:</label>
+          <label for="sel1">Availability:</label>
           <select formControlName="status" class="form-control" id="sel1">
-            <option>To Be Done</option>
-            <option>In Progress</option>
-            <option>Completed</option>
+            <option>Available</option>
+            <option>Contested</option>
+            <option>Sold</option>
           </select>
         </div>
       </div>
       <div class="btncenter">
-        <button type="submit" [disabled]="!editForm.valid" class="btn btn-danger">Confirm</button>
+        <button type="submit" [disabled]="!editForm.valid" class="btn btn-primary">Confirm</button>
       </div>
     </form>
   </div>
