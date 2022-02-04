@@ -22,10 +22,10 @@ export class TasksComponent implements OnInit {
   editingId: any;
 
   editForm = new FormGroup({
-    id: new FormControl('', Validators.nullValidator && Validators.required),
-    task: new FormControl('', Validators.nullValidator && Validators.required),
-    assignee: new FormControl('', Validators.nullValidator && Validators.required),
-    status: new FormControl('', Validators.nullValidator && Validators.required)
+    handle: new FormControl('', Validators.nullValidator && Validators.required),
+    seller: new FormControl('', Validators.nullValidator && Validators.required),
+    price: new FormControl('', Validators.nullValidator && Validators.required),
+    availability: new FormControl('', Validators.nullValidator && Validators.required)
   });
 
   ngOnInit(): void {

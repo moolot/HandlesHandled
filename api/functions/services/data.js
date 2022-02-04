@@ -1,30 +1,33 @@
 const data = {
-    todos: [
+    handles: [
       {
         id: 1,
-        task: 'task1',
-        assignee: 'assignee1000',
-        status: 'completed'
+        handle: '@done',
+        seller: 'bigshot',
+        price: '$92',
+        availability: 'sold'
       },
       {
         id: 2,
-        task: 'task2',
-        assignee: 'assignee1001',
-        status: 'completed'
+        handle: '@beep',
+        seller: 'man#1',
+        price: '$1,423',
+        availability: 'sold'
       },
       {
         id: 3,
-        task: 'task3',
-        assignee: 'assignee1002',
-        status: 'completed'
+        handle: '@ghfjagf',
+        seller: 'guy#6',
+        price: '$512',
+        availability: 'sold'
       },
       {
         id: 4,
-        task: 'task4',
-        assignee: 'assignee1000',
-        status: 'completed'
-      },
-      
+        handle: '@fisharecool',
+        seller: 'lady#7',
+        price: '$1',
+        availability: 'sold'
+      }
     ]
   };
 
@@ -36,14 +39,14 @@ const data = {
         task.id = data.todos.length + 1;
         data.todos.push(task);
         return {
-            message: "task added",
+            message: "handle posting added",
             tasks: data.todos.length
         }
     },
     deleteToDos: function(id) {
         data.todos = data.todos.filter(todo => todo.id != id)
         return {
-            message: "task deleted",
+            message: "handle posting deleted",
             tasks: data.todos.length
         }
     },
@@ -53,7 +56,7 @@ const data = {
             return todo;
         });
         return {
-            message: "task edited",
+            message: "handle posting edited",
             tasks: data.todos.length
         }
     }
