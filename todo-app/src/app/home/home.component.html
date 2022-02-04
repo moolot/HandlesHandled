@@ -34,11 +34,11 @@
   </div>
 </div>
 <div class="mrgnbtm">
-  <app-tasks
-    *ngIf="tasks.length !== 0"
-    [tasks]="tasks"
-    (deleteTask)="deleteTask($event)"
-    (editTask)="editTask($event)"
+  <app-handles
+    *ngIf="handles.length !== 0"
+    [handles]="handles"
+    (deleteHandle)="deleteHandle($event)"
+    (editHandle)="editHandle($event)"
     >
-  </app-tasks>
+  </app-handles>
 </div>
