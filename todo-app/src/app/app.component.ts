@@ -18,44 +18,45 @@ export class AppComponent implements OnInit,  OnDestroy {
   title = 'angular-nodejs-example';
 
   todoForm = new FormGroup({
-    task: new FormControl('', Validators.nullValidator && Validators.required),
+    handle: new FormControl('', Validators.nullValidator && Validators.required),
     assignee: new FormControl('', Validators.nullValidator && Validators.required),
+    price: new FormControl('', Validators.nullValidator && Validators.required),
     status: new FormControl('', Validators.nullValidator && Validators.required)
   });
 
-  tasks: any[] = [];
+  handles: any[] = [];
   settings: any;
 
   destroy$: Subject<boolean> = new Subject<boolean>();
 
   onSubmit() {
     console.log(this.todoForm.value);
-    this.appService.addTask(this.todoForm.value).pipe(takeUntil(this.destroy$)).subscribe(data => {
+    this.appService.addHandle(this.todoForm.value).pipe(takeUntil(this.destroy$)).subscribe(data => {
       console.log('message::::', data);
-      this.getTasks();
+      this.getHandles();
       this.todoForm.reset();
     });
   }
 
-  deleteTask(taskid: number) {
-    console.log('deleting this task:::', taskid);
-    this.appService.deleteTask(taskid).pipe(takeUntil(this.destroy$)).subscribe(data => {
+  deleteHandle(handleid: number) {
+    console.log('deleting this handle:::', handleid);
+    this.appService.deleteHandle(handleid).pipe(takeUntil(this.destroy$)).subscribe(data => {
       console.log('message::::', data);
-      this.getTasks();
+      this.getHandles();
     });
   }
 
-  editTask(task: any) {
-    console.log('editing this task:::', task);
-    this.appService.editTask(task).pipe(takeUntil(this.destroy$)).subscribe(data => {
+  editHandle(handle: any) {
+    console.log('editing this handle:::', handle);
+    this.appService.editHandle(handle).pipe(takeUntil(this.destroy$)).subscribe(data => {
       console.log('message::::', data);
-      this.getTasks();
+      this.getHandles();
     });
   }
 
-  getTasks() {
-    this.appService.getTasks().pipe(takeUntil(this.destroy$)).subscribe((tasks: any[]) => {
-      this.tasks = tasks;
+  getHandles() {
+    this.appService.getHandles().pipe(takeUntil(this.destroy$)).subscribe((handles: any[]) => {
+      this.handles = handles;
     });
   }
 
@@ -64,7 +65,7 @@ export class AppComponent implements OnInit,  OnDestroy {
   }
 
   ngOnInit() {
-    this.getTasks();
+    this.getHandles();
     this.getAppSettings();
   }
 
