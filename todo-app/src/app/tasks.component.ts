@@ -5,19 +5,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from './app.service';
 
 @Component({
-  selector: 'app-tasks',
-  templateUrl: './tasks.component.html',
-  styleUrls: ['./tasks.component.css']
+  selector: 'app-handles',
+  templateUrl: './handles.component.html',
+  styleUrls: ['./handles.component.css']
 })
-export class TasksComponent implements OnInit {
+export class HandlesComponent implements OnInit {
 
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService, private route: ActivatedRoute,
     private router: Router, private appService: AppService) { }
 
   @Input() handles: any[];
-  @Output() deleteTask = new EventEmitter<any>();
-  @Output() editTask = new EventEmitter<any>();
+  @Output() deleteHandle = new EventEmitter<any>();
+  @Output() editHandle = new EventEmitter<any>();
 
   editingId: any;
 
@@ -39,16 +39,16 @@ export class TasksComponent implements OnInit {
   onSubmit() {
     console.log(this.editForm.value);
     this.modalService.hide(1);
-    this.editTask.emit(this.editForm.value);
+    this.editHandle.emit(this.editForm.value);
   }
 
-  delTask(task) {
-    this.deleteTask.emit(task);
+  delHandle(handle) {
+    this.deleteHandle.emit(handle);
   }
 
-  openModal(template: TemplateRef<any>, task) {
-    this.editingId = task.id;
-    this.editForm.setValue({id: task.id, handle: task.handle, seller: task.seller, price: task.price, availability: task.availability});
+  openModal(template: TemplateRef<any>, handle) {
+    this.editingId = handle.id;
+    this.editForm.setValue({id: handle.id, handle: handle.handle, seller: handle.seller, price: handle.price, availability: handle.availability});
     this.modalRef = this.modalService.show(template);
   }
 
