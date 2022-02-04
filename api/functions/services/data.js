@@ -35,29 +35,29 @@ const data = {
     getToDos: function() {
         return data.todos;
     },
-    addToDo: function(task) {
-        task.id = data.todos.length + 1;
-        data.todos.push(task);
+    addToDo: function(handle) {
+        handle.id = data.todos.length + 1;
+        data.todos.push(handle);
         return {
             message: "handle posting added",
-            tasks: data.todos.length
+            handles: data.todos.length
         }
     },
     deleteToDos: function(id) {
         data.todos = data.todos.filter(todo => todo.id != id)
         return {
             message: "handle posting deleted",
-            tasks: data.todos.length
+            handles: data.todos.length
         }
     },
     editTodos: function(task) {
         data.todos = data.todos.map(todo => {
-            if (todo.id === task.id) todo = task;
+            if (todo.id === task.id) todo = handle;
             return todo;
         });
         return {
             message: "handle posting edited",
-            tasks: data.todos.length
+            handles: data.todos.length
         }
     }
   }

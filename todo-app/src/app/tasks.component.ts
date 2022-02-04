@@ -15,7 +15,7 @@ export class TasksComponent implements OnInit {
   constructor(private modalService: BsModalService, private route: ActivatedRoute,
     private router: Router, private appService: AppService) { }
 
-  @Input() tasks: any[];
+  @Input() handles: any[];
   @Output() deleteTask = new EventEmitter<any>();
   @Output() editTask = new EventEmitter<any>();
 
@@ -31,8 +31,8 @@ export class TasksComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  gotoDetail(task) {
-    localStorage.setItem('task', JSON.stringify(task));
+  gotoDetail(handle) {
+    localStorage.setItem('handle', JSON.stringify(handle));
     this.router.navigate(['detail']);
   }
 
@@ -48,7 +48,7 @@ export class TasksComponent implements OnInit {
 
   openModal(template: TemplateRef<any>, task) {
     this.editingId = task.id;
-    this.editForm.setValue({id: task.id, task: task.task, assignee: task.assignee, status: task.status});
+    this.editForm.setValue({id: task.id, handle: task.handle, seller: task.seller, price: task.price, availability: task.availability});
     this.modalRef = this.modalService.show(template);
   }
 

@@ -18,12 +18,13 @@ export class HomeComponent implements OnInit {
   title = 'angular-nodejs-example';
 
   todoForm = new FormGroup({
-    task: new FormControl('', Validators.nullValidator && Validators.required),
-    assignee: new FormControl('', Validators.nullValidator && Validators.required),
-    status: new FormControl('', Validators.nullValidator && Validators.required)
+    handle: new FormControl('', Validators.nullValidator && Validators.required),
+    seller: new FormControl('', Validators.nullValidator && Validators.required),
+    price: new FormControl('', Validators.nullValidator && Validators.required),
+    availability: new FormControl('', Validators.nullValidator && Validators.required)
   });
 
-  tasks: any[] = [];
+  handles: any[] = [];
   settings: any;
 
   destroy$: Subject<boolean> = new Subject<boolean>();
@@ -54,8 +55,8 @@ export class HomeComponent implements OnInit {
   }
 
   getTasks() {
-    this.appService.getTasks().pipe(takeUntil(this.destroy$)).subscribe((tasks: any[]) => {
-      this.tasks = tasks;
+    this.appService.getTasks().pipe(takeUntil(this.destroy$)).subscribe((handles: any[]) => {
+      this.handles = handles;
     });
   }
 
