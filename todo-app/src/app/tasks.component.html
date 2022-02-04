@@ -10,26 +10,26 @@
       </tr>
     </thead>
     <tbody>
-      <tr (click)="gotoDetail(task)" *ngFor="let task of tasks; let i = index">
+      <tr (click)="gotoDetail(handle)" *ngFor="let handle of handles; let i = index">
         <td>
-          {{task.handle}}
+          {{handle.handle}}
         </td>
         <td>
-          {{task.seller}}
+          {{handle.seller}}
         </td>
         <td>
-          {{task.price}}
+          {{handle.price}}
         </td>
         <td>
           <div class="row">
             <div class="col-md-6">
-              {{task.availability}}
+              {{handle.availability}}
             </div>
             <div class="col-md-3">
-              <button type="button" (click)="openModal(template, task)" class="btn btn-primary right">Buy</button>
+              <button type="button" (click)="openModal(template, handle)" class="btn btn-primary right">Buy</button>
             </div>
             <div class="col-md-3">
-              <button type="button" (click)="delTask(task.id)" class="btn btn-danger right">Report</button>
+              <button type="button" (click)="delTask(handle.id)" class="btn btn-danger right">Report</button>
             </div>
           </div>
         </td>
