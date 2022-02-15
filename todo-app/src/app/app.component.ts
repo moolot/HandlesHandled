@@ -19,6 +19,7 @@ export class AppComponent implements OnInit,  OnDestroy {
 
   todoForm = new FormGroup({
     handle: new FormControl('', Validators.nullValidator && Validators.required),
+    platform: new FormControl('', Validators.nullValidator && Validators.required),
     assignee: new FormControl('', Validators.nullValidator && Validators.required),
     price: new FormControl('', Validators.nullValidator && Validators.required),
     status: new FormControl('', Validators.nullValidator && Validators.required)

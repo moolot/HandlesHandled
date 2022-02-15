@@ -23,6 +23,7 @@ export class HandlesComponent implements OnInit {
 
   editForm = new FormGroup({
     handle: new FormControl('', Validators.nullValidator && Validators.required),
+    platform: new FormControl('', Validators.nullValidator && Validators.required),
     seller: new FormControl('', Validators.nullValidator && Validators.required),
     price: new FormControl('', Validators.nullValidator && Validators.required),
     availability: new FormControl('', Validators.nullValidator && Validators.required)

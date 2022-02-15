@@ -20,20 +20,20 @@ export class AppService {
   }
 
   getHandles() {
-    return this.http.get(this.rootURL + '/todos');
+    return this.http.get(this.rootURL + '/handles');
   }
 
   addHandle(handle: any) {
-    return this.http.post(this.rootURL + '/todos', {handle});
+    return this.http.post(this.rootURL + '/handles', {handle});
   }
 
   editHandle(handle: any) {
-    return this.http.put(this.rootURL + '/todo', {handle});
+    return this.http.put(this.rootURL + '/handle', {handle});
   }
 
   deleteHandle(handleId: any) {
     console.log('deleting handle:::', handleId);
-    return this.http.delete(`${this.rootURL}/todo/${handleId}`);
+    return this.http.delete(`${this.rootURL}/handle/${handleId}`);
   }
 
   getSettings(url: string) {

@@ -4,6 +4,7 @@
     <thead>
       <tr>
         <th>Handle</th>
+        <th>Platform</th>
         <th>Seller</th>
         <th>Price</th>
         <th>Availability</th>
@@ -13,6 +14,9 @@
       <tr (click)="gotoDetail(handle)" *ngFor="let handle of handles; let i = index">
         <td>
           {{handle.handle}}
+        </td>
+        <td>
+          {{handle.platform}}
         </td>
         <td>
           {{handle.seller}}
@@ -61,8 +65,20 @@
       </div>
       <div class="row">
         <div class="form-group col-md-6">
-          <label for="exampleInputPassword1">Seller</label>
-          <input type="text" class="form-control" formControlName="seller" id="exampleInputPassword1" placeholder="Jake">
+          <label for="exampleInputPlatform">Platform</label>
+          <input type="text" class="form-control" formControlName="platform" id="exampleInputPlatform" placeholder="Twitter">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="exampleInputSeller">Seller</label>
+          <input type="text" class="form-control" formControlName="seller" id="exampleInputSeller" placeholder="Jake">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="exampleInputPrice">Price</label>
+          <input type="text" class="form-control" formControlName="price" id="exampleInputPrice" placeholder="$32.98">
         </div>
       </div>
       <div class="row">

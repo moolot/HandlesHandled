@@ -6,18 +6,22 @@
       <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="form-group col-md-6">
-            <label for="exampleInputEmail1">Handle</label>
-            <input type="text" class="form-control" formControlName="handle" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="@">
+            <label for="exampleInputHandle">Handle</label>
+            <input type="text" class="form-control" formControlName="handle" id="exampleInputHandle" aria-describedby="emailHelp" placeholder="@">
           </div>
           <div class="form-group col-md-6">
-            <label for="exampleInputPassword1">Seller</label>
-            <input type="text" class="form-control" formControlName="seller" id="exampleInputPassword1" placeholder="Cool Guy">
+            <label for="exampleInputPlatform">Platform</label>
+            <input type="text" class="form-control" formControlName="handle" id="exampleInputPlatform" aria-describedby="emailHelp" placeholder="Twitter">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="exampleInputSeller">Seller</label>
+            <input type="text" class="form-control" formControlName="seller" id="exampleInputSeller" placeholder="Cool Guy">
           </div>
         </div>
         <div class="row">
           <div class="form-group col-md-6">
-            <label for="exampleInputPassword1">Price</label>
-            <input type="text" class="form-control" formControlName="price" id="exampleInputPassword1" placeholder="$">
+            <label for="exampleInputPrice">Price</label>
+            <input type="text" class="form-control" formControlName="price" id="exampleInputPrice" placeholder="$">
           </div>
           <div class="form-group col-md-6">
             <label for="sel1">Availability:</label>
