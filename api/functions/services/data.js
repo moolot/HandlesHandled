@@ -3,6 +3,7 @@ const data = {
       {
         id: 1,
         handle: '@done',
+        platform: 'Twitter',
         seller: 'bigshot',
         price: '$92',
         availability: 'sold'
@@ -10,6 +11,7 @@ const data = {
       {
         id: 2,
         handle: '@beep',
+        platform: 'Tiktok',
         seller: 'man#1',
         price: '$1,423',
         availability: 'sold'
@@ -17,6 +19,7 @@ const data = {
       {
         id: 3,
         handle: '@ghfjagf',
+        platform: 'Twitter',
         seller: 'guy#6',
         price: '$512',
         availability: 'sold'
@@ -24,6 +27,7 @@ const data = {
       {
         id: 4,
         handle: '@fisharecool',
+        platform: 'Instagram',
         seller: 'lady#7',
         price: '$1',
         availability: 'sold'
