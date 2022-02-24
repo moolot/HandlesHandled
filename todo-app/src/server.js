@@ -50,7 +50,7 @@ async function main(){
         await client.connect();
  
         
-        await  handles.PaymentMehtods.insert(
+        await  handles.PaymentMethods.insert(
             {
                 "id": "pm_1KQhWA2eZvKYlo2CsCA8Fqvp",
                 "object": "payment_method",

@@ -36,10 +36,10 @@ const data = {
   };
 
   module.exports = {
-    getToDos: function() {
+    getHandles: function() {
         return data.handles;
     },
-    addToDo: function(handle) {
+    addHandle: function(handle) {
         handle.id = data.handles.length + 1;
         data.handles.push(handle);
         return {
@@ -47,14 +47,14 @@ const data = {
             handles: data.handles.length
         }
     },
-    deleteToDos: function(id) {
+    deleteHandles: function(id) {
         data.handles = data.handles.filter(handle => handle.id != id)
         return {
             message: "handle posting deleted",
             handles: data.handles.length
         }
     },
-    editTodos: function(task) {
+    editHandles: function(task) {
         data.handles = data.handles.map(handle => {
             if (handle.id === task.id) handle = handle;
             return handle;

@@ -1,33 +1,33 @@
 const data = require('./data.js');
 
 module.exports = {
-    getTodos: function(context) {
+    getHandles: function(context) {
         try {
-            const vacations = data.getToDos();
+            const vacations = data.getHandles();
             context.res.status(200).json(vacations);
           } catch (error) {
             context.res.status(500).send(error);
         }
     },
-    addTodos: function(context) {
+    addHandles: function(context) {
         try {
-            const response = data.addToDo(context.req.body.task);
+            const response = data.addHandle(context.req.body.task);
             context.res.status(200).json(response);
           } catch (error) {
             context.res.status(500).send(error);
         }
     },
-    deleteTodos: function(context) {
+    deleteHandles: function(context) {
         try {
-            const response = data.deleteToDos(context.req.params.id);
+            const response = data.deleteHandles(context.req.params.id);
             context.res.status(200).json(response);
           } catch (error) {
             context.res.status(500).send(error);
         }
     },
-    editTodos: function(context) {
+    editHandles: function(context) {
         try {
-            const response = data.editTodos(context.req.body.task);
+            const response = data.editHandles(context.req.body.task);
             context.res.status(200).json(response);
           } catch (error) {
             context.res.status(500).send(error);

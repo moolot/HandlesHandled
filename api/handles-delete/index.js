@@ -1,4 +1,4 @@
-const todoService = require('../functions/services/todo');
+const handleService = require('../functions/services/handle');
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
@@ -6,7 +6,7 @@ module.exports = async function (context, req) {
     if (req.params && req.params.id) {
         context.res = {
             status: 200,
-            body: todoService.deleteTodos(context)
+            body: handleservice.deleteHandles(context)
         };
     }
     else {

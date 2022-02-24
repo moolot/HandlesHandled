@@ -1,4 +1,4 @@
-const todoService = require('../functions/services/todo');
+const handleService = require('../functions/services/handle');
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
