@@ -5,10 +5,61 @@ const DATABASE_URL = 'mongodb://botterca:7Epa4RVj2AYsBwauqVV6o2mFZrkPTyYkvlcwsC3
 
 
 const DATABASE_NAME = 'Handles';
-const DATABASE_COLLECTION_NAME ='my-Handles';
+const DATABASE_COLLECTION_NAME = 'my-Handles';
 
 let mongoConnection = null;
 let db = null;
+
+const paymentMethod = {
+    "id": "pm_1KQhWA2eZvKYlo2CsCA8Fqvp",
+    "object": "payment_method",
+    "billing_details": {
+        "address": {
+            "city": null,
+            "country": null,
+            "line1": null,
+            "line2": null,
+            "postal_code": null,
+            "state": null
+        },
+        "email": "jenny@example.com",
+        "name": null,
+        "phone": "+15555555555"
+    },
+    "card": {
+        "brand": "visa",
+        "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": null,
+            "cvc_check": "pass"
+        },
+        "country": "US",
+        "exp_month": 8,
+        "exp_year": 2023,
+        "fingerprint": "Xt5EWLLDS7FJjR1c",
+        "funding": "credit",
+        "generated_from": null,
+        "last4": "4242",
+        "networks": {
+            "available": [
+                "visa"
+            ],
+            "preferred": null
+        },
+        "three_d_secure_usage": {
+            "supported": true
+        },
+        "wallet": null
+    },
+    "created": 123456789,
+    "customer": null,
+    "livemode": false,
+    "metadata": {
+        "order_id": "123456789"
+    },
+    "type": "card"
+};
+
 
 const insertDocuments = async (
     documents = [{ a: 1 }, { a: 2 }, { a: 3 }]
@@ -21,18 +72,18 @@ const insertDocuments = async (
     const collection = await db.collection(DATABASE_COLLECTION_NAME);
 
     // Insert some documents
-    return await collection.insertMany(documents);
+    return await collection.insert(documents);
 };
 const findDocuments = async (
     query = { a: 3 }
 ) => {
-    
+
     // check params
     if (!db)
         throw Error('findDocuments::missing required params');
 
     // Get the collection
-    const collection = await db.collection(DATABASE_COLLECTION_NAME );
+    const collection = await db.collection(DATABASE_COLLECTION_NAME);
 
     // find documents
     return await collection.find(query).toArray();
@@ -41,9 +92,9 @@ const findDocuments = async (
 const removeDocuments = async (
     docFilter = {}
 ) => {
-    
+
     // check params
-    if (!db )
+    if (!db)
         throw Error('removeDocuments::missing required params');
 
     // Get the documents collection
@@ -54,7 +105,7 @@ const removeDocuments = async (
 };
 
 const connect = async (url) => {
-    
+
     // check params
     if (!url) throw Error('connect::missing required params');
 
@@ -73,7 +124,7 @@ const connectToDatabase = async () => {
         db = mongoConnection.db(DATABASE_NAME);
 
         console.log(`DB connected = ${!!db}`);
-        
+
         return !!db;
 
     } catch (err) {
@@ -81,11 +132,22 @@ const connectToDatabase = async () => {
         console.log(err);
     }
 };
+const testInsertFromLocal = async () => {
+    try {
+        await connectToDatabase();
+        const collection = await db.collection(DATABASE_COLLECTION_NAME);
+        await collection.insert(paymentMethod);
+        console.log("Successfully inserted into DB!");
 
-connectToDatabase();
-insertDocuments(documents = [{ a: 1 }, { a: 2 }, { a: 3 }]);
+    } catch (e) {
+        console.error(e);
+    } finally {
+        console.log("All done.")
+    }
+}
 
 module.exports = {
+    testInsertFromLocal,
     insertDocuments,
     findDocuments,
     removeDocuments,

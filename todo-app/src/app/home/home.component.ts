@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
     availability: new FormControl('', Validators.nullValidator && Validators.required)
   });
 
+  
   handles: any[] = [];
   settings: any;
 
