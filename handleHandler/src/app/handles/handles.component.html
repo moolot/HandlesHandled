@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-12 mrgnbtm">
             <h2>.</h2>
@@ -31,8 +31,8 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary"> Create </button>
-                <!-- <input type="submit" class="form-control" value ="Create"> -->
-                <!-- [disabled]="!handleForm.valid" -->
+                <input type="submit" class="form-control" value ="Create">
+                [disabled]="!handleForm.valid"
             </form>
         </div>
 
@@ -43,4 +43,53 @@
 
 
     </div>
-</div>
+</div> -->
+<div>
+    <ul class="handles">
+      <li *ngFor="let handle of handles" (click)="onSelect(handle)" [class.selected]="handle === selectedHandle">
+        <button class="delete-button" (click)="deleteHandle(handle)">Delete</button>
+        <div class="handle-element">
+          <div class="badge">{{handle.uid}}</div>
+          <div class="handle">{{handle.handle}}</div>
+          <div class="platform">{{handle.platform}}</div>
+          <div class="seller">{{handle.seller}}</div>
+          <div class="price">{{handle.price}}</div>
+          <div class="availability">{{handle.availability}}</div>
+        </div>
+      </li>
+    </ul>
+    <div class="editarea">
+      <button (click)="enableAddMode()">Add New Handle</button>
+      <div *ngIf="selectedHandle">
+        <div class="editfields">
+          <div>
+            <label>id: </label>
+            <input [(ngModel)]="selectedHandle.uid" placeholder="id" *ngIf="addingHandle" />
+            <label *ngIf="!addingHandle" class="value">{{selectedHandle.uid}}</label>
+          </div>
+          <div>
+            <label>handle: </label>
+            <input [(ngModel)]="selectedHandle.handle" placeholder="@" />
+          </div>
+          <div>
+            <label>platform: </label>
+            <input [(ngModel)]="selectedHandle.platform" placeholder="Twitter" />
+          </div>
+          <div>
+            <label>seller: </label>
+            <input [(ngModel)]="selectedHandle.seller" placeholder="@" />
+          </div>
+          <div>
+            <label>price: </label>
+            <input [(ngModel)]="selectedHandle.price" placeholder="$" />
+          </div>
+          <div>
+            <label>availability: </label>
+            <input [(ngModel)]="selectedHandle.platfavailabilityorm" placeholder="Available" />
+          </div>
+        </div>
+        <button (click)="cancel()">Cancel</button>
+        <button (click)="save()">Save</button>
+      </div>
+    </div>
+  </div>
