@@ -1,3 +1,46 @@
-<table class="table table-success table-striped table-hover">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mrgnbtm">
+            <h2>.</h2>
+            <form [formGroup]="handleForm" (ngSubmit) = "onClickSubmit(handleForm.value)">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="handleInput">Handle</label>
+                        <input type="text" class="form-control" name="handle" placeholder="@Handle" formControlName="handle">
+                    </div>
+                    <div class="form-group">
+                        <label for="platformInput">Platform</label>
+                        <input type="text" class="form-control" name="platform" placeholder="Twitter" formControlName="platform">
+                    </div>
+                    <div class="form-group">
+                        <label for="sellerInput">Seller</label>
+                        <input type="text" class="form-control" name="seller" placeholder="Cool Guy" formControlName="seller">
+                    </div>
+                    <div class="form-group">
+                        <label for="priceInput">Price</label>
+                        <input type="text" class="form-control" name="price" placeholder="$" formControlName="price" >
+                    </div>
+                    <div class="form-group">
+                        <label for="availabilityInput">Availability:</label>
+                        <select class="form-control" name="availability" formControlName="availability">
+                            <option>Available</option>
+                            <option>Contested</option>
+                            <option>Sold</option>
+                        </select>
+                    </div>
+                </div>
 
-</table>
+                <button type="submit" class="btn btn-primary"> Create </button>
+                <!-- <input type="submit" class="form-control" value ="Create"> -->
+                <!-- [disabled]="!handleForm.valid" -->
+            </form>
+        </div>
+
+
+        <p>
+            Handle is currently: {{handle}}
+        </p>
+
+
+    </div>
+</div>

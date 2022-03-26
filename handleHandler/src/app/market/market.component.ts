@@ -18,6 +18,7 @@ export class MarketComponent {
     price: new FormControl(''),
     availability: new FormControl('')
   });
+  
 
   handles: any[] = [];
   
