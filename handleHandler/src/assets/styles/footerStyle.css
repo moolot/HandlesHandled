@@ -1,6 +1,6 @@
 .footer-basic {
     padding:40px 0;
-    background-color:#ffffff;
+    background-color:#5a49be;
     color:#4b4c4d;
   }
   
@@ -56,4 +56,8 @@
     font-size:13px;
     color:#aaa;
     margin-bottom:0;
+    padding-right: 15px;
+  }
+  .footerText{
+      padding-right: 20px;
   }
