@@ -33,16 +33,18 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-outline-primary" routerLink="../market"> Create </button>
+                <div class="d-flex justify-content-center btnSubmit">
+                <button type="button" class="btn btn-outline-primary btn-block" routerLink="../market"> Create Listing </button>
                 <!-- <input type="submit" class="form-control" value ="Create"> -->
                 <!-- [disabled]="!handleForm.valid" -->
+                </div>
             </form>
         </div>
 
 
-        <p>
+        <!-- <p>
             Handle is currently: {{handle}}
-        </p>
+        </p> -->
 
 
     </div>
@@ -51,7 +53,7 @@
 <footer class="page-footer font-small bg-secondary fixed-bottom">
 
     <!-- Copyright -->
-    <div class="row">
+    <div class="d-flex justify-content-center">
         <div class="col-lg-4 col-md-10 mb-3 mb-md-0">
             <h5 class="footer-copyright py-3">©2022 Copyright:
                 <a href="https://github.com/moolot/HandlesHandled"> GitHub</a>
@@ -67,6 +69,11 @@
                 <a routerLink="../tos"> here</a>
             </h5>
         </div>
+        <div class="col-lg-4 col-md-10 mb-3 mb-md-0">
+          <h5 class="footer-copyright py-3">Login
+              <a routerLink="../market"> here</a>
+          </h5>
+      </div>
     </div>
-
-</footer>
+  
+  </footer>
