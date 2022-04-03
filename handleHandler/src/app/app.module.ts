@@ -12,6 +12,7 @@ import { MarketComponent } from './market/market.component';
 import { ModeratorComponent } from './moderator/moderator.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TOSComponent } from './tos/tos.component';
+import { MarketPsuedoComponent } from './market-psuedo/market-psuedo.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TOSComponent } from './tos/tos.component';
     MarketComponent,
     ModeratorComponent,
     AboutUsComponent,
-    TOSComponent
+    TOSComponent,
+    MarketPsuedoComponent
   ],
   
   imports: [

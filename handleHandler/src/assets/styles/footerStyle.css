@@ -3,6 +3,11 @@
     background-color:#5a49be;
     color:#4b4c4d;
   }
+  span {
+    width: 15px;
+    height: 15px;
+    background: black;
+  }
   
   .footer-basic ul {
     padding:0;
