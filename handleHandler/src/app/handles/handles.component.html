@@ -1,24 +1,27 @@
+<img src="../assets/foshofosho.JPG" routerLink="../about-us" class="rounded mx-auto d-block" alt="Logo" width="300" height="300">
 <div class="container">
     <div class="row">
         <div class="col-md-12 mrgnbtm">
-            <h2>.</h2>
-            <form [formGroup]="handleForm" (ngSubmit) = "onClickSubmit(handleForm.value)">
+            <form [formGroup]="handleForm" (ngSubmit)="onClickSubmit(handleForm.value)">
                 <div class="row">
                     <div class="form-group">
                         <label for="handleInput">Handle</label>
-                        <input type="text" class="form-control" name="handle" placeholder="@Handle" formControlName="handle">
+                        <input type="text" class="form-control" name="handle" placeholder="@Handle"
+                            formControlName="handle">
                     </div>
                     <div class="form-group">
                         <label for="platformInput">Platform</label>
-                        <input type="text" class="form-control" name="platform" placeholder="Twitter" formControlName="platform">
+                        <input type="text" class="form-control" name="platform" placeholder="Twitter"
+                            formControlName="platform">
                     </div>
                     <div class="form-group">
                         <label for="sellerInput">Seller</label>
-                        <input type="text" class="form-control" name="seller" placeholder="Cool Guy" formControlName="seller">
+                        <input type="text" class="form-control" name="seller" placeholder="Cool Guy"
+                            formControlName="seller">
                     </div>
                     <div class="form-group">
                         <label for="priceInput">Price</label>
-                        <input type="text" class="form-control" name="price" placeholder="$" formControlName="price" >
+                        <input type="text" class="form-control" name="price" placeholder="$" formControlName="price">
                     </div>
                     <div class="form-group">
                         <label for="availabilityInput">Availability:</label>
@@ -30,7 +33,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary"> Create </button>
+                <button type="submit" class="btn btn-primary" routerLink="../market"> Create </button>
                 <!-- <input type="submit" class="form-control" value ="Create"> -->
                 <!-- [disabled]="!handleForm.valid" -->
             </form>
@@ -44,3 +47,26 @@
 
     </div>
 </div>
+<!-- Footer -->
+<footer class="page-footer font-small bg-secondary fixed-bottom">
+
+    <!-- Copyright -->
+    <div class="row">
+        <div class="col-lg-4 col-md-10 mb-3 mb-md-0">
+            <h5 class="footer-copyright py-3">©2022 Copyright:
+                <a href="https://github.com/moolot/HandlesHandled"> GitHub</a>
+            </h5>
+        </div>
+        <div class="col-lg-4 col-md-10 mb-3 mb-md-0">
+            <h5 class="footer-copyright py-3">Get to Know Us
+                <a routerLink="../about-us"> here </a>
+            </h5>
+        </div>
+        <div class="col-lg-4 col-md-10 mb-3 mb-md-0">
+            <h5 class="footer-copyright py-3">Terms & Conditions
+                <a routerLink="../tos"> here</a>
+            </h5>
+        </div>
+    </div>
+
+</footer>
